@@ -1,4 +1,5 @@
-This directory is for simulating FR-Train on synthetic dataset.
+This directory is for simulating FR-Train 
+[https://arxiv.org/abs/2002.10234, ICML 2020] on synthetic dataset.
 The program needs PyTorch and Jupyter Notebook.
 
 The directory contains total 8 files: 1 README, 1 python file, 
