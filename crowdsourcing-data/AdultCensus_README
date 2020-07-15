@@ -1,0 +1,47 @@
+The file "AdultCensus_crowdsourcing_data.csv" contains the crowdsourcing 
+results for AdultCensus dataset.
+
+It contains 3046 examples (y label ratio = 1:1), and each example has 
+11 crowdsourcing answers.
+
+The first line of a given CSV file contains the information of each 
+column. The contents are as follows.
+
+----------------------------------------------------------------------
+<Meta features>
+example_id: IDs for identifying each example
+true_label: Whether one's actual annual income is above $50K (correct 
+   answer, true y)
+----------------------------------------------------------------------
+<Features provided to crowdworkers>
+age: Age (raw value)
+work_class: A rough classification of occupational groups
+education: Academic background
+education_num: The numerical value of one's academic background
+marital_status: Marital status. Note that "separated" includes people 
+   who living apart with marital discord or intentions of a divorce, 
+   "married-spouse-absent" includes married people who live apart because 
+   they have different residences for reasons such as occupation.
+occupation: More information about occupational groups
+role_in_family: One's own role in the family
+caiptal_gain: Capital gain (non-negative integer)
+work_hours_per_week: Working hours a week
+gender: Male and female
+race: White and black
+----------------------------------------------------------------------
+<Crowdsourcing results>
+ans_1 ~ ans_11: Results from 11 unique workers. Probabilities of recidivism 
+   within two years determined by each worker for the sample. (lowest:1, 
+   highest: 4)
+worker_id_1 ~ worker_id_11: ID assigned to each worker (converted value 
+   of the AMT worker ID). The AMT worker ID is not disclosed for privacy.
+----------------------------------------------------------------------
+
+This data shows the results of crowdsourcing in true y label ratio 1:1.
+In comparison, the validation set used in our experiments does not have
+a y label ratio of 1:1 because we do not have knowledge of the true labels.
+Instead, we take a random subset of the (unlabeled) training data and
+crowdsource the labels, which preserves the original true label distribution.
+
+To adjust the quality of crowdsourced labels, one can compute worker-specific
+accuracies by grouping the answers by worker_id and filter out poor performers.
